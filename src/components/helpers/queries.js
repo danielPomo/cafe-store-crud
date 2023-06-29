@@ -17,6 +17,7 @@ export const login = async (usuario) => {
       return null;
     }
     const { id, email, nombreUsuario } = usuarioBuscado;
+    console.log(usuarioBuscado);
     return { id, email, nombreUsuario };
   } catch (error) {
     console.log(error);

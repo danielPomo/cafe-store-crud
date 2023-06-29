@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,22 +12,32 @@ import EditarProducto from "./components/views/producto/EditarProducto";
 import Administrador from "./components/views/Administrador";
 import Registro from "./components/views/Registro"
 import Login from "./components/views/Login"
+import { useState } from "react";
 
 function App() {
+  const [usuarioLogueado, setUsuarioLogueado] = useState({})
   return (
     <BrowserRouter>
-      <Menu/>
+      <Menu />
       <Routes>
-        <Route exact path = "/" element={<Inicio />} />
-        <Route exact path = "/registro" element={<Registro />} />
-        <Route exact path = "/login" element={<Login />} />
-        <Route exact path = "/detalle" element={<DetalleProducto />} />
-        <Route exact path = "/administrador" element={<Administrador />} />
-        <Route exact path = "/administrador/crear-producto" element={<CrearProducto />} />
-        <Route exact path = "/administrador/editar-producto" element={<EditarProducto />} />
-        <Route path = "*" element={<Error404 />} />
+        <Route exact path="/" element={<Inicio />} />
+        <Route exact path="/registro" element={<Registro />} />
+        <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+        <Route exact path="/detalle" element={<DetalleProducto />} />
+        <Route exact path="/administrador" element={<Administrador />} />
+        <Route
+          exact
+          path="/administrador/crear-producto"
+          element={<CrearProducto />}
+        />
+        <Route
+          exact
+          path="/administrador/editar-producto"
+          element={<EditarProducto />}
+        />
+        <Route path="*" element={<Error404 />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

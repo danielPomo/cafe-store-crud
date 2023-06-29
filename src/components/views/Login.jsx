@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { login } from "../helpers/queries";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
-const Login = () => {
+const Login = ({ setUsuarioLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -12,10 +14,18 @@ const Login = () => {
     reset,
   } = useForm();
   const onSubmit = (usuario) => {
-    login(usuario)
-      .then((res) => {
-      console.log(res)
-    })
+    login(usuario).then((res) => {
+      if (res) {
+        sessionStorage.setItem("usuario", JSON.stringify(res));
+        setUsuarioLogueado(res);
+      } else {
+        Swal.fire(
+          "Ocurrió un error",
+          "Alguno de los datos ingresados no es correcto",
+          "error"
+        );
+      }
+    });
   };
   return (
     <Container className="mainSection">
