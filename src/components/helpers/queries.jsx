@@ -1,26 +1,22 @@
 /* eslint-disable no-unused-vars */
-const URL_usuario = import.meta.env.VITE_API_USUARIO;
+// const URL_usuario = import.meta.env.VITE_API_USUARIO;
 
 export const login = async (usuario) => {
   try {
-    const respuesta = await fetch(URL_usuario);
-    console.log(respuesta);
+    const respuesta = await fetch("http://localhost:3004/usuarios");
     const listaUsuarios = await respuesta.json();
-    console.log(listaUsuarios);
     const usuarioBuscado = listaUsuarios.find(
       (itemUsuario) => itemUsuario.email === usuario.email
     );
-    if (usuarioBuscado) {
-      if (usuarioBuscado.password === usuario.password) {
-        return usuarioBuscado;
-      } else {
-        console.log("El password es incorrecto");
-        return null;
-      }
-    } else {
-      console.log("el mail no exister");
+    if (!usuarioBuscado) {
+      console.log("el mail no existe");
       return null;
     }
+    if (usuarioBuscado.password !== usuario.password) {
+      console.log("el password es incorrecto");
+      return null;
+    }
+    return usuarioBuscado;
   } catch (error) {
     console.log(error);
   }
