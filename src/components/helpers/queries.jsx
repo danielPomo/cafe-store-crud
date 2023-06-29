@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-// const URL_usuario = import.meta.env.VITE_API_USUARIO;
+const URL_usuario = import.meta.env.VITE_API_USUARIO;
 
 export const login = async (usuario) => {
   try {
-    const respuesta = await fetch("http://localhost:3004/usuarios");
+    const respuesta = await fetch(URL_usuario);
     const listaUsuarios = await respuesta.json();
     const usuarioBuscado = listaUsuarios.find(
       (itemUsuario) => itemUsuario.email === usuario.email
@@ -16,7 +16,8 @@ export const login = async (usuario) => {
       console.log("el password es incorrecto");
       return null;
     }
-    return usuarioBuscado;
+    const { id, email, nombreUsuario } = usuarioBuscado;
+    return { id, email, nombreUsuario };
   } catch (error) {
     console.log(error);
   }
