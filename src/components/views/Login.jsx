@@ -5,8 +5,10 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { login } from "../helpers/queries";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setUsuarioLogueado }) => {
+  const navegacion = useNavigate()
   const {
     register,
     handleSubmit,
@@ -18,6 +20,7 @@ const Login = ({ setUsuarioLogueado }) => {
       if (res) {
         sessionStorage.setItem("usuario", JSON.stringify(res));
         setUsuarioLogueado(res);
+        navegacion('/administrador')
       } else {
         Swal.fire(
           "Ocurrió un error",
