@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 const CrearProducto = () => {
@@ -30,6 +30,26 @@ const CrearProducto = () => {
             {errors.producto?.message}
           </Form.Text>
         </Form.Group>
+        <FloatingLabel controlId="floatingTextarea2" label="Description">
+          <Form.Control
+            as="textarea"
+            style={{ height: "100px" }}
+            {...register("descripcion", {
+              required: "Se debe especificar los detalles del producto",
+                maxlenth: {
+                  value: 300,
+                  message:
+                    "La descripción debe tener como máximo 300 caracteres",
+              },
+              minLength: {
+                value: 20,
+                message: "La descripción debe tener como mínimo 20 caracteres"
+                }
+              
+            })}
+          />
+        </FloatingLabel>
+        <Form.Text className="text-danger">{errors.descripcion?.message}</Form.Text>
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Precio*</Form.Label>
           <Form.Control

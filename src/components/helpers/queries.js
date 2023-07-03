@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-const URL_usuario = import.meta.env.VITE_API_USUARIO;
+const URL_usuario = import.meta.env.VITE_API_USUARIO
+const URL_producto = import.meta.env.VITE_API_PRODUCTO
 
 export const login = async (usuario) => {
   try {
@@ -23,3 +24,13 @@ export const login = async (usuario) => {
     console.log(error);
   }
 };
+
+export const obtenerProductos = async () => {
+  try {
+    const respuesta = await fetch(URL_producto);
+    const listaProductos = await respuesta.json()
+    return listaProductos
+  } catch (error) {
+    console.log(error)
+  }
+}

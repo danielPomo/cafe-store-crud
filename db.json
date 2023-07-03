@@ -1,6 +1,10 @@
 {
     "productos": [
-      { "id": 1, "nombreProducto": "café", "precio": 300, "descripcion":"alguna descripcion...", "categoria":"bebida caliente","imagen":"https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
+      { "id": 1, "nombreProducto": "café", "precio": 300, "descripcion":"alguna descripcion...", "categoria":"bebida caliente","imagen":"https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+      { "id": 2, "nombreProducto": "café con leche", "precio": 200, "descripcion":"alguna descripcion...", "categoria":"bebida caliente","imagen":"https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+      { "id": 3, "nombreProducto": "café con coñac", "precio": 320, "descripcion":"alguna descripcion...", "categoria":"bebida caliente","imagen":"https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+      { "id": 4, "nombreProducto": "café irlandes", "precio":390, "descripcion":"alguna descripcion...", "categoria":"bebida caliente","imagen":"https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+      { "id": 5, "nombreProducto": "café negro", "precio": 480, "descripcion":"alguna descripcion...", "categoria":"bebida caliente","imagen":"https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
     ],
     "usuarios": [
       { "id": 1, "nombreUsuario": "admin", "email": "admin@admin.com", "password": "Admin123+" }
