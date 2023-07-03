@@ -7,12 +7,11 @@ import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/views/Inicio";
 import DetalleProducto from "./components/views/DetalleProducto";
-import CrearProducto from "./components/views/producto/CrearProducto";
-import EditarProducto from "./components/views/producto/EditarProducto";
-import Administrador from "./components/views/Administrador";
 import Registro from "./components/views/Registro"
 import Login from "./components/views/Login"
 import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas"
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
   const usuarioValorInicial = JSON.parse(sessionStorage.getItem("usuario")) || {}
@@ -32,17 +31,12 @@ function App() {
           element={<Login setUsuarioLogueado={setUsuarioLogueado} />}
         />
         <Route exact path="/detalle" element={<DetalleProducto />} />
-        <Route exact path="/administrador" element={<Administrador />} />
-        <Route
-          exact
-          path="/administrador/crear-producto"
-          element={<CrearProducto />}
-        />
-        <Route
-          exact
-          path="/administrador/editar-producto"
-          element={<EditarProducto />}
-        />
+        <Route exact path="/administrador/*" element={
+          <RutasProtegidas>
+            <RutasAdmin></RutasAdmin>
+          </RutasProtegidas>
+        } />
+        
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
