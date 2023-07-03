@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearProductos } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearProducto = () => {
   const {
@@ -11,6 +13,18 @@ const CrearProducto = () => {
   } = useForm();
   const onSubmit = (producto) => {
     console.log(producto);
+    crearProductos(producto).then((respuesta) => {
+      if (respuesta && respuesta.status === 201) {
+        Swal.fire("Producto creado", `El producto ${producto.nombreProducto} se ha creado correctamente`, "success")
+        reset()
+      } else {
+        Swal.fire(
+          "Error al crear producto",
+          `El producto ${producto.nombreProducto} no pudo ser creado`,
+          "error"
+        );
+      }
+    })
   };
   return (
     <section className="container mainSection">
@@ -22,7 +36,7 @@ const CrearProducto = () => {
           <Form.Control
             type="text"
             placeholder="Ej: Cafe"
-            {...register("producto", {
+            {...register("nombreProducto", {
               required: "Se debe suministrar un nombre para el producto",
             })}
           />
@@ -73,7 +87,7 @@ const CrearProducto = () => {
           <Form.Control
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
-            {...register("url", {
+            {...register("imagen", {
               required:
                 "Debe proporcionarse una url de imágen para el producto",
               pattern: {
