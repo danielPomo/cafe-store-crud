@@ -1,20 +1,36 @@
 {
   "productos": [
     {
-      "nombreProducto": "cafecito",
-      "descripcion": "asdsadasdsadasdasdsadasd",
-      "precio": "234",
-      "imagen": "https://sp.depositphotos.com/31573965/stock-photo-many-different-butterflies-flying-isolated.jpg",
+      "nombreProducto": "Latte",
+      "descripcion": "Delicioso latte con café tostado sin azucar.",
+      "precio": "350",
+      "imagen": "https://images.pexels.com/photos/14704660/pexels-photo-14704660.jpeg",
       "categoria": "bebida caliente",
       "id": 1
     },
     {
-      "nombreProducto": "medialunasssssss",
-      "descripcion": "riquisima medialuna calentita",
-      "precio": "265",
-      "imagen": "https://app-images.ea.com/ps9x41qn6x3c/3o7yypc2W70PqHkkQgvaGG/b9c1a935e12b66d6d722fe27c1b75aa3/amazing-adventures-riddle-of-the-two-knights-1.jpg",
-      "categoria": "bebida fria",
+      "nombreProducto": "Croissant",
+      "descripcion": "Delicioso croissant dulce, hecho en base a manteca y huevos, y perfumado con esencia de vainilla. En el exterior, bañado en almíbar.",
+      "precio": "170",
+      "imagen": "https://images.pexels.com/photos/12176271/pexels-photo-12176271.jpeg",
+      "categoria": "dulce",
       "id": 2
+    },
+    {
+      "nombreProducto": "Capuccino",
+      "descripcion": "Deliciosa combinación de leche, café y chocolate.",
+      "precio": "360",
+      "imagen": "https://images.pexels.com/photos/350478/pexels-photo-350478.jpeg",
+      "categoria": "bebida caliente",
+      "id": 3
+    },
+    {
+      "nombreProducto": "Te helado",
+      "descripcion": "Deliciosa bebida helada, a base de te de hierbas saborizado, a 10° C, con notas de jengibre y estragón.",
+      "precio": "330",
+      "imagen": "https://images.pexels.com/photos/792613/pexels-photo-792613.jpeg",
+      "categoria": "bebida fria",
+      "id": 4
     }
   ],
   "usuarios": [

@@ -15,7 +15,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     <Navbar bg="danger" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Cafecito
+          LatteLover
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

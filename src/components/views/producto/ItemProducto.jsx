@@ -46,7 +46,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       <td>{producto.precio}</td>
       <td>{producto.imagen}</td>
       <td>{producto.categoria}</td>
-      <td>
+      <td className="d-flex gap-2">
         <Link
           className="btn btn-warning"
           to={`/administrador/editar-producto/${producto.id}`}
